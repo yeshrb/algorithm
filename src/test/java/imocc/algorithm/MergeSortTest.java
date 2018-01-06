@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.lang.reflect.Method;
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
@@ -20,12 +21,24 @@ public class MergeSortTest {
     @After
     public void tearDown() throws Exception {
     }
+//    @Test
+//    public void testSort() {
+//        int[] a = {8,2,7,6,1,3,5,4};
+//        MergeSort.sort(a);
+//        int[] b = {1,2,3,4,5,6,7,8};
+//        Assert.assertArrayEquals(b,a);
+//    }
     @Test
-    public void testSort() {
-        int[] a = {8,2,7,6,1,3,5,4};
-        MergeSort.sort(a);
-        int[] b = {1,2,3,4,5,6,7,8};
-        Assert.assertArrayEquals(b,a);
+    public void testmerge() throws Exception {
+        Method merge_method=
+                MergeSort.class.getMethod("merge",
+                        new Class<?>[]{int[].class, int.class, int.class, int.class});
+        merge_method.setAccessible(true);
+        int [] a = {2,4,6,8,1,3,5,7};
+        Object[] paras = {a,0,3,7};
+        int [] expected = {1,2,3,4,5,6,7,8};
+        merge_method.invoke(null,paras);
+        Assert.assertArrayEquals(expected,a);
     }
 
 }
