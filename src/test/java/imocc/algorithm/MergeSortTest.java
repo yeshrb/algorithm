@@ -30,17 +30,18 @@ public class MergeSortTest {
 //    }
     @Test
     public void testmerge() throws Exception {
-      
-        Method method=Class.forName("MergeSort").getDeclaredMethod("me", new Class[]{String.class});
-        Method merge_method=
-                MergeSort.class.getDeclaredMethod("merge",
-                        new Class<?>[]{int[].class, int.class, int.class, int.class});
+
+        Class<?> TargetClass = Class.forName("imocc.algorithm.MergeSort");
+        Method  merge_method = TargetClass.getDeclaredMethod("merge",
+                       new Class<?>[]{int[].class, int.class, int.class, int.class});
         merge_method.setAccessible(true);
+        Object in = TargetClass.newInstance();
         int [] a = {2,4,6,8,1,3,5,7};
         Object[] paras = {a,0,3,7};
         int [] expected = {1,2,3,4,5,6,7,8};
-        merge_method.invoke( MergeSort.class,paras);
+        merge_method.invoke(in,paras);
         Assert.assertArrayEquals(expected,a);
+
     }
 
 }
