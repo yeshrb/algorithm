@@ -51,10 +51,25 @@ public class Array {
         res.append("[");
         for (int i = 0; i < size; i++) {
             res.append(i);
-            if(i<size)
+            if(i<size-1)
                 res.append(',');
-
         }
-        return super.toString();
+        res.append("]");
+        return res.toString();
+    }
+
+    public int get(int index) {
+        if(index < 0 || index >=size){
+            throw new IllegalArgumentException("get failed,index must >=0 and < size");
+        }
+
+        return data[index];
+    }
+
+    public void set(int index, int e) {
+        if(index < 0 || index >=size){
+            throw new IllegalArgumentException("set failed,index must >=0 and < size");
+        }
+        data[index] = e;
     }
 }

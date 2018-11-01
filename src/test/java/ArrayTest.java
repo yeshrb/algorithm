@@ -1,7 +1,7 @@
 
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
+import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.*;
 
@@ -9,6 +9,14 @@ import static org.junit.Assert.*;
  * Created by ljj on 2018/1/10.
  */
 public class ArrayTest {
+    Array arr;
+    @Rule
+    public ExpectedException thrown= ExpectedException.none();
+
+    @Before
+    public void setUp() {
+        arr = initTestArray(20);
+    }
 
     @Test
     public void testCreate() {
@@ -72,11 +80,29 @@ public class ArrayTest {
 
     @Test
     public void testToString() {
-        Array arr = initTestArray(10);
+        Array arr = initTestArray(20);
         String expected = "Arrat: size = 10, capacity = 20\n"
                 + "[0,1,2,3,4,5,6,7,8,9]";
-        assertEquals(expected,arr.toString());
+        assertEquals(expected, arr.toString());
 
+    }
+
+    @Test
+    public void testGet() {
+        assertEquals(0, arr.get(0));
+        thrown.expect(IllegalArgumentException.class);
+        arr.get(arr.getSize());
+    }
+
+    @Test
+    public void testSet(){
+        Array arr = initTestArray(20);
+        arr.set(0,101);
+        assertEquals(101,arr.get(0));
+        thrown.expect(IllegalArgumentException.class);
+        arr.set(arr.getSize(),101);
+        thrown.expect(IllegalArgumentException.class);
+        arr.set(-1,101);
     }
 
     private Array initTestArray(int capacity) {
