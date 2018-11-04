@@ -1,17 +1,17 @@
-public class Array {
+public class Array<E> {
     private int size;
-    public int[] data;
+    public E[] data;
 
     public Array(int capacity) {
         this.size = 0;
-        data = new int[capacity];
+        data = (E[]) new Object[capacity];
     }
 
     public Array() {
         this(10);
     }
 
-    public void add(int index, int e) {
+    public void add(int index, E e) {
         if (size == data.length) {
             throw new IllegalArgumentException("add failed,Array is full");
         }
@@ -25,11 +25,11 @@ public class Array {
         size++;
     }
 
-    public void addLast(int e) {
+    public void addLast(E e) {
         add(size, e);
     }
 
-    public void addFirst(int e) {
+    public void addFirst(E e) {
         add(0, e);
     }
 
@@ -60,7 +60,7 @@ public class Array {
         return res.toString();
     }
 
-    public int get(int index) {
+    public E get(int index) {
         if (index < 0 || index >= size) {
             throw new IllegalArgumentException("get failed,index must >=0 and < size");
         }
@@ -68,17 +68,17 @@ public class Array {
         return data[index];
     }
 
-    public void set(int index, int e) {
+    public void set(int index, E e) {
         if (index < 0 || index >= size) {
             throw new IllegalArgumentException("set failed,index must >=0 and < size");
         }
         data[index] = e;
     }
 
-    public int find(int e) {
+    public int find(E e) {
         int res = -1;
-        for (int i = 0; i < data.length - 1; i++) {
-            if (data[i] == e) {
+        for (int i = 0; i < size - 1; i++) {
+            if (data[i].equals(e)) {
                 res = i;
                 break;
             }
@@ -86,11 +86,11 @@ public class Array {
         return res;
     }
 
-    public int remove(int index) {
+    public E remove(int index) {
         if (index < 0 || index >= size) {
             throw new IllegalArgumentException("remove failed,index must >=0 and < size");
         }
-        int res = data[index];
+        E res = data[index];
         for (int i = index; i < size - 1; i++) {
             data[i] = data[i + 1];
         }
@@ -98,17 +98,17 @@ public class Array {
         return res;
     }
 
-    public int removeFirst() {
+    public E removeFirst() {
         return remove(0);
     }
 
-    public int removeLast() {
+    public E removeLast() {
         return remove(size - 1);
     }
 
-    public void removeElement(int e) {
+    public void removeElement(E e) {
         int index = find(e);
-        if(index != -1)
+        if (index != -1)
             remove(index);
 
     }

@@ -1,6 +1,6 @@
-
-
-import org.junit.*;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.*;
@@ -8,8 +8,8 @@ import static org.junit.Assert.*;
 /**
  * Created by ljj on 2018/1/10.
  */
-public class ArrayTest {
-    Array arr;
+public class Array4StudentsTest {
+    Array<Student> arr;
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
@@ -38,15 +38,15 @@ public class ArrayTest {
     @Test
     public void testAddLast() {
         Array arr = initTestArray(20);
-        arr.addLast(200);
-        assertEquals(200,arr.get(arr.getSize()-1));
+        arr.addLast(new Student("fir"+200,"last"+200));
+        assertEquals(new Student("fir"+200,"last"+200),arr.get(arr.getSize()-1));
     }
 
     @Test
     public void testAdd() {
         Array arr = initTestArray(20);
-        arr.add(3, 100);
-        assertEquals(100,arr.get(3));
+        arr.add(3, new Student("fir"+100,"last"+100));
+        assertEquals(new Student("fir"+100,"last"+100),arr.get(3));
 
     }
 
@@ -63,10 +63,10 @@ public class ArrayTest {
     @Test
     public void testAddFirst() {
         Array arr = new Array();
-        arr.addFirst(100);
-        assertEquals(100, arr.data[0]);
-        arr.addFirst(200);
-        assertEquals(200, arr.data[0]);
+        arr.addFirst(new Student("fir"+100,"last"+100));
+        assertEquals(new Student("fir"+100,"last"+100), arr.data[0]);
+        arr.addFirst(new Student("fir"+200,"last"+200));
+        assertEquals(new Student("fir"+200,"last"+200), arr.data[0]);
 
     }
 
@@ -74,23 +74,24 @@ public class ArrayTest {
     public void testIsEmpty() {
         Array arr = new Array();
         assertTrue(arr.isEmpty());
-        arr.addLast(1);
+        arr.addLast(new Student("fir"+200,"last"+200));
         assertFalse(arr.isEmpty());
 
     }
 
-    @Test
-    public void testToString() {
-        Array arr = initTestArray(20);
-        String expected = "Arrat: size = 10, capacity = 20\n"
-                + "[0,1,2,3,4,5,6,7,8,9]";
-        assertEquals(expected, arr.toString());
-
-    }
+//    @Test
+//    public void testToString() {
+//        Array arr = initTestArray(20);
+//        String expected = "Arrat: size = 10, capacity = 20\n"
+//                + "[0,1,2,3,4,5,6,7,8,9]";
+//        assertEquals(expected, arr.toString());
+//
+//    }
 
     @Test
     public void testGet() {
-        assertEquals(0, arr.get(0));
+        Student st = new Student("fir"+0,"last"+0);
+        assertTrue(st.equals(arr.get(0)));
         thrown.expect(IllegalArgumentException.class);
         arr.get(arr.getSize());
     }
@@ -98,28 +99,28 @@ public class ArrayTest {
     @Test
     public void testSet() {
         Array arr = initTestArray(20);
-        arr.set(0, 101);
-        assertEquals(101, arr.get(0));
+        arr.set(0, new Student("fir"+101,"last"+101));
+        assertEquals(new Student("fir"+101,"last"+101), arr.get(0));
         thrown.expect(IllegalArgumentException.class);
-        arr.set(arr.getSize(), 101);
+        arr.set(arr.getSize(), new Student("fir"+101,"last"+101));
         thrown.expect(IllegalArgumentException.class);
-        arr.set(-1, 101);
+        arr.set(-1, new Student("fir"+101,"last"+101));
     }
 
     // 查找数组中元素e所在的索引，如果不存在元素e，则返回-1
     @Test
     public void find_should_return_index_of_element_or_neg_1_if_not_exist() {
         Array arr = initTestArray(20);
-        assertEquals(3, arr.find(3));
+        assertEquals(3, arr.find(new Student("fir"+3,"last"+3)));
     }
 
 
     @Test
     public void remove_should_delete_element_of_index_and_return_element_deleted() {
         Array arr = initTestArray(20);
-        assertEquals(1, arr.remove(1));
+        assertEquals(new Student("fir"+1,"last"+1), arr.remove(1));
         assertEquals(9, arr.getSize());
-        assertEquals(2, arr.get(1));
+        assertEquals(new Student("fir"+2,"last"+2), arr.get(1));
 
     }
 
@@ -127,9 +128,9 @@ public class ArrayTest {
     @Test
     public void removeFirst_should_remove_the_first_element_and_return_it() {
         Array arr = initTestArray(20);
-        assertEquals(0, arr.removeFirst());
-        assertEquals(1, arr.removeFirst());
-        assertEquals(2, arr.removeFirst());
+        assertEquals(new Student("fir"+0,"last"+0), arr.removeFirst());
+        assertEquals(new Student("fir"+1,"last"+1), arr.removeFirst());
+        assertEquals(new Student("fir"+2,"last"+2), arr.removeFirst());
 
     }
 
@@ -137,9 +138,9 @@ public class ArrayTest {
     @Test
     public void removeLast_should_remove_the_last_element_and_return_it() {
         Array arr = initTestArray(20);
-        assertEquals(9, arr.removeLast());
-        assertEquals(8, arr.removeLast());
-        assertEquals(7, arr.removeLast());
+        assertEquals(new Student("fir"+9,"last"+9), arr.removeLast());
+        assertEquals(new Student("fir"+8,"last"+8), arr.removeLast());
+        assertEquals(new Student("fir"+7,"last"+7), arr.removeLast());
 
     }
 
@@ -147,16 +148,17 @@ public class ArrayTest {
     @Test
     public void removeElement_should_remove_the_element(){
         Array arr = initTestArray(20);
-        arr.removeElement(1);
-        assertEquals(-1,arr.find(1));
-        arr.removeElement(2);
-        assertEquals(-1,arr.find(2));
+        arr.removeElement(new Student("fir"+1,"last"+1));
+        assertEquals(-1,arr.find(new Student("fir"+1,"last"+1)));
+        arr.removeElement(new Student("fir"+2,"last"+2));
+        assertEquals(-1,arr.find(new Student("fir"+2,"last"+2)));
     }
 
     private Array initTestArray(int capacity) {
-        Array arr = new Array(capacity);
+        Array arr = new Array<Student>(capacity);
         for (int i = 0; i < 10; i++) {
-            arr.addLast(i);
+            Student student = new Student("fir"+i,"last"+i);
+            arr.addLast(student);
         }
         return arr;
     }
