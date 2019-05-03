@@ -1,11 +1,11 @@
 package array;
 
-public class MyArray {
-    private int[] data;
+public class MyArray<E> {
+    private E[] data;
     private int size;
 
     public MyArray(int capacity) {
-        this.data = new int[capacity];
+        this.data = (E[]) new Object[capacity];
         this.size = 0;
     }
 
@@ -25,21 +25,21 @@ public class MyArray {
         return (this.size == 0);
     }
 
-    public void addLast(int element) {
-        addOn(size, element);
+    public void addLast(E element) {
+        add(size, element);
     }
 
-    public void addFirst(int element) {
-        addOn(0, element);
+    public void addFirst(E element) {
+        add(0, element);
     }
 
 
-    public void addOn(int index, int element) {
-        if (isArrayFull()) {
-            throw new IllegalArgumentException("add failed, the Array is fulled!");
-        }
+    public void add(int index, E element) {
         if (isOutOfBounds(index)) {
             throw new IllegalArgumentException("add failed, The index is out of array bounds");
+        }
+        if (isArrayFull()) {
+            resize(2 * data.length);
         }
         for (int i = size - 1; i >= index; i--) {
             data[i + 1] = data[i];
@@ -50,57 +50,65 @@ public class MyArray {
     }
 
 
-    public int get(int index) {
+
+
+    public E get(int index) {
         if (isOutOfBounds(index)) {
             throw new IllegalArgumentException("add failed, The index is out of array bounds");
         }
         return data[index];
     }
 
-    public void set(int index, int element) {
+    public void set(int index, E element) {
         if (isOutOfBounds(index)) {
             throw new IllegalArgumentException("add failed, The index is out of array bounds");
         }
         data[index] = element;
     }
 
-    public boolean contains(int element) {
+    public boolean contains(E element) {
         for (int i = 0; i < size; i++) {
-            if (data[i] == element)
+            if (data[i].equals(element))
                 return true;
         }
         return false;
     }
 
-    public int find(int element) {
+    public int find(E element) {
         for (int i = 0; i < size; i++) {
-            if (data[i] == element)
+            if (data[i].equals(element))
                 return i;
         }
         return -1;
     }
 
-    public int remove(int index) {
+    public E remove(int index) {
         if (isOutOfBounds(index)) {
             throw new IllegalArgumentException("add failed, The index is out of array bounds");
         }
-        int ret = data[index];
+        E ret = data[index];
         for (int i = index + 1; i < size; i++) {
             data[i - 1] = data[i];
         }
         size--;
+        data[size] = null;
+
+        if(size == data.length /2) {
+            resize(data.length / 2);
+        }
+
         return ret;
     }
 
-    public int removeFirst() {
+    public E removeFirst() {
         return remove(0);
     }
 
-    public int removeLast() {
+    public E removeLast() {
         return remove(size - 1);
     }
 
-    public void removeElement(int elements) {
+    public void removeElement(E elements) {
         int index = find(elements);
         if (index != -1) {
             remove(index);
@@ -123,6 +131,7 @@ public class MyArray {
     }
 
 
+
     private boolean isArrayFull() {
         return size == data.length;
     }
@@ -131,5 +140,11 @@ public class MyArray {
         return (index < 0 || index > size);
     }
 
-
+    private void resize(int capacity) {
+        E[] newData = (E[]) new Object[capacity];
+        for (int i = 0; i < size; i++) {
+            newData[i] = data[i];
+        }
+        data = newData;
+    }
 }

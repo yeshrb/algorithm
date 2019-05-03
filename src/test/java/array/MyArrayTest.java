@@ -2,8 +2,7 @@ package array;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
+
 
 import static org.junit.Assert.*;
 
@@ -18,6 +17,17 @@ public class MyArrayTest {
         for (int i = 0; i < 10; i++) {
             array.addLast(i);
         }
+    }
+
+    @Test
+    public void createArray() {
+        MyArray arr1 = new MyArray();
+        assertEquals(10, arr1.getCapacity());
+        assertEquals(0, arr1.getSize());
+
+        MyArray arr2 = new MyArray(30);
+        assertEquals(30, arr2.getCapacity());
+        assertEquals(0, arr2.getSize());
     }
 
     @Test
@@ -47,13 +57,27 @@ public class MyArrayTest {
     @Test
     public void addFirst() {
         array.addFirst(-1);
-        System.out.println(array);
+        assertEquals(-1, array.get(0));
     }
 
     @Test
     public void addOn() {
-        array.addOn(1, 100);
-        System.out.println(array);
+        array.add(1, 100);
+        assertEquals(100, array.get(1));
+
+    }
+
+    @Test
+    public void add_beyond_size() {
+        MyArray<Integer> array = new MyArray();
+        for (int i = 0; i < 10 ; i++) {
+            array.addFirst(i);
+        }
+        assertEquals(10,array.getSize());
+        assertEquals(10,array.getCapacity());
+        array.add(1,100);
+        assertEquals(11,array.getSize());
+        assertEquals(20,array.getCapacity());
 
     }
 
@@ -79,12 +103,26 @@ public class MyArrayTest {
     }
 
     @Test
+    public void remove_trigg_resize() {
+        array.addLast(100);
+        array.remove(0);
+        assertEquals(10, array.getCapacity());
+        for (int i = 0; i < 5 ; i++) {
+            array.remove(i);
+        }
+        assertEquals(5, array.getCapacity());
+
+    }
+
+
+    @Test
     public void removeFirst() {
         assertEquals(10, array.getSize());
         array.removeFirst();
         assertEquals(9, array.getSize());
         assertEquals(1, array.get(0));
     }
+
     @Test
     public void removeLast() {
         assertEquals(10, array.getSize());
