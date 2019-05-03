@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6886643-3896-490c-abc4-5cac34bd015f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/array/MyArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/array/DynamicArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/array/MyArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/array/DynamicArrayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/DynamicArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/array/DynamicArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/array/DynamicArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/array/DynamicArrayTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -108,13 +107,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2783" />
+          <entry key="java" value="2799" />
           <entry key="txt" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2783" />
+          <entry key="JAVA" value="2799" />
           <entry key="PLAIN_TEXT" value="10" />
         </counts>
       </usages-collector>
@@ -144,8 +143,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/array/DynamicArray.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+            <state relative-caret-position="332">
+              <caret line="93" column="59" selection-start-line="93" selection-start-column="59" selection-end-line="93" selection-end-column="59" />
               <folding>
                 <element signature="e#211#212#0" expanded="true" />
                 <element signature="e#235#236#0" expanded="true" />
@@ -173,8 +172,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/array/DynamicArrayTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+            <state relative-caret-position="272">
+              <caret line="110" column="23" selection-start-line="110" selection-start-column="23" selection-end-line="110" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#687#688#0" expanded="true" />
@@ -236,8 +235,9 @@
         <option value="$PROJECT_DIR$/src/main/java/MyArray.java" />
         <option value="$PROJECT_DIR$/src/test/java/array/ArrayTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/array/MyArray.java" />
-        <option value="$PROJECT_DIR$/src/main/java/array/DynamicArray.java" />
         <option value="$PROJECT_DIR$/src/test/java/array/MyArrayTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/array/DynamicArray.java" />
+        <option value="$PROJECT_DIR$/src/test/java/array/DynamicArrayTest.java" />
       </list>
     </option>
   </component>
@@ -310,6 +310,15 @@
               <item name="algorithm" type="b2602c69:ProjectViewProjectNode" />
               <item name="DataStructures" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="array" type="462c0819:PsiDirectoryNode" />
+              <item name="DynamicArray" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DataStructures" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -327,6 +336,15 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="array" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DataStructures" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="array" type="462c0819:PsiDirectoryNode" />
+              <item name="DynamicArrayTest" type="1a9f42e2:ClassTreeNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -339,7 +357,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556888006198" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556894932351" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -410,6 +428,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DynamicArrayTest.remove_trigg_resize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="array.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="array" />
+      <option name="MAIN_CLASS_NAME" value="array.DynamicArrayTest" />
+      <option name="METHOD_NAME" value="remove_trigg_resize" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MyArrayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="algorithm" />
       <extension name="coverage">
@@ -440,22 +474,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyArrayTest.find" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="algorithm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="array.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="array" />
-      <option name="MAIN_CLASS_NAME" value="array.MyArrayTest" />
-      <option name="METHOD_NAME" value="find" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MyArrayTest.remove_trigg_resize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="algorithm" />
       <extension name="coverage">
@@ -474,18 +492,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.MyArrayTest" />
-      <item itemvalue="JUnit.MyArrayTest.find" />
       <item itemvalue="JUnit.MyArrayTest.add_beyond_size" />
       <item itemvalue="JUnit.MyArrayTest.remove_trigg_resize" />
       <item itemvalue="JUnit.DynamicArrayTest" />
+      <item itemvalue="JUnit.DynamicArrayTest.remove_trigg_resize" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.DynamicArrayTest" />
+        <item itemvalue="JUnit.DynamicArrayTest.remove_trigg_resize" />
         <item itemvalue="JUnit.MyArrayTest" />
         <item itemvalue="JUnit.MyArrayTest.remove_trigg_resize" />
         <item itemvalue="JUnit.MyArrayTest.add_beyond_size" />
-        <item itemvalue="JUnit.MyArrayTest.find" />
       </list>
     </recent_temporary>
   </component>
@@ -504,20 +522,11 @@
       <workItem from="1542873245804" duration="260000" />
       <workItem from="1556626389086" duration="6478000" />
       <workItem from="1556850893153" duration="2981000" />
-      <workItem from="1556870689826" duration="4229000" />
+      <workItem from="1556870689826" duration="5102000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MyArrayTest_find - 2019.05.03 at 16h 41m 51s.xml">
-      <configuration name="MyArrayTest.find" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyArrayTest_add_beyond_size - 2019.05.03 at 20h 35m 43s.xml">
-      <configuration name="MyArrayTest.add_beyond_size" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyArrayTest_add_beyond_size - 2019.05.03 at 20h 36m 13s.xml">
-      <configuration name="MyArrayTest.add_beyond_size" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MyArrayTest_add_beyond_size - 2019.05.03 at 20h 37m 08s.xml">
       <configuration name="MyArrayTest.add_beyond_size" configurationId="JUnit" />
     </history-entry>
@@ -539,9 +548,18 @@
     <history-entry file="MyArrayTest - 2019.05.03 at 20h 52m 33s.xml">
       <configuration name="MyArrayTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="DynamicArrayTest - 2019.05.03 at 20h 53m 30s.xml">
+      <configuration name="DynamicArrayTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DynamicArrayTest - 2019.05.03 at 22h 47m 07s.xml">
+      <configuration name="DynamicArrayTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DynamicArrayTest_remove_trigg_resize - 2019.05.03 at 22h 48m 43s.xml">
+      <configuration name="DynamicArrayTest.remove_trigg_resize" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40046000" />
+    <option name="totallyTimeSpent" value="40919000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="995" extended-state="0" />
@@ -628,8 +646,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/array/DynamicArray.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        <state relative-caret-position="332">
+          <caret line="93" column="59" selection-start-line="93" selection-start-column="59" selection-end-line="93" selection-end-column="59" />
           <folding>
             <element signature="e#211#212#0" expanded="true" />
             <element signature="e#235#236#0" expanded="true" />
@@ -655,8 +673,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/array/DynamicArrayTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        <state relative-caret-position="272">
+          <caret line="110" column="23" selection-start-line="110" selection-start-column="23" selection-end-line="110" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#687#688#0" expanded="true" />

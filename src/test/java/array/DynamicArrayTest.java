@@ -105,12 +105,10 @@ public class DynamicArrayTest{
     @Test
     public void remove_trigg_resize() {
         array.addLast(100);
-        array.remove(0);
-        assertEquals(10, array.getCapacity());
-        for (int i = 0; i < 5 ; i++) {
+        for (int i = 0; i < 6 ; i++) {
             array.remove(i);
         }
-        assertEquals(5, array.getCapacity());
+        assertEquals(10, array.getCapacity());
 
     }
 
