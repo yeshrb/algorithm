@@ -7,13 +7,13 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-public class MyArrayTest {
+public class DynamicArrayTest{
 
-    private MyArray array;
+    private DynamicArray array;
 
     @Before
     public void setUp() {
-        array = new MyArray(20);
+        array = new DynamicArray(20);
         for (int i = 0; i < 10; i++) {
             array.addLast(i);
         }
@@ -21,11 +21,11 @@ public class MyArrayTest {
 
     @Test
     public void createArray() {
-        MyArray arr1 = new MyArray();
+        DynamicArray arr1 = new DynamicArray();
         assertEquals(10, arr1.getCapacity());
         assertEquals(0, arr1.getSize());
 
-        MyArray arr2 = new MyArray(30);
+        DynamicArray arr2 = new DynamicArray(30);
         assertEquals(30, arr2.getCapacity());
         assertEquals(0, arr2.getSize());
     }
@@ -43,7 +43,7 @@ public class MyArrayTest {
     @Test
     public void isEmpty() {
         assertEquals(false, array.isEmpty());
-        MyArray myArr = new MyArray();
+        DynamicArray myArr = new DynamicArray();
         assertEquals(true, myArr.isEmpty());
     }
 
@@ -69,7 +69,7 @@ public class MyArrayTest {
 
     @Test
     public void add_beyond_size() {
-        MyArray<Integer> array = new MyArray();
+        DynamicArray<Integer> array = new DynamicArray();
         for (int i = 0; i < 10 ; i++) {
             array.addFirst(i);
         }

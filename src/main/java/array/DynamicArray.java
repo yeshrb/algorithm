@@ -1,15 +1,15 @@
 package array;
 
-public class MyArray<E> {
+public class DynamicArray<E> {
     private E[] data;
     private int size;
 
-    public MyArray(int capacity) {
+    public DynamicArray(int capacity) {
         this.data = (E[]) new Object[capacity];
         this.size = 0;
     }
 
-    public MyArray() {
+    public DynamicArray() {
         this(10);
     }
 
