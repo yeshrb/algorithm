@@ -57,6 +57,10 @@ public class DynamicArray<E> {
         return data[index];
     }
 
+    public E getLast() {
+        return get(size - 1);
+    }
+
     public void set(int index, E element) {
         if (isOutOfBounds(index)) {
             throw new IllegalArgumentException("add failed, The index is out of array bounds");
@@ -144,4 +148,6 @@ public class DynamicArray<E> {
         }
         data = newData;
     }
+
+
 }
