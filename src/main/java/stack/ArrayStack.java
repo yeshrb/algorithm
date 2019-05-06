@@ -13,6 +13,7 @@ public class ArrayStack<E> implements Stack<E> {
         array = new DynamicArray();
     }
 
+
     public int getSize() {
         return array.getSize();
     }
@@ -21,9 +22,6 @@ public class ArrayStack<E> implements Stack<E> {
         return array.isEmpty();
     }
 
-    public int getCapacity() {
-        return array.getCapacity();
-    }
     public void push(E e) {
         array.addLast(e);
     }

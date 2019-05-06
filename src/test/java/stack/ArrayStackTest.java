@@ -61,4 +61,5 @@ public class ArrayStackTest {
         stack.pop();
         assertEquals(18,stack.getSize());
     }
+
 }
